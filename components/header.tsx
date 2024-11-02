@@ -18,7 +18,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <CheckSquare className="h-6 w-6" />
-          <h1 className="text-xl font-bold">AI Notes App</h1>
+          <h1 className="text-xl font-bold">Nero</h1>
         </div>
         <nav className="hidden md:flex space-x-4">
           <Link
