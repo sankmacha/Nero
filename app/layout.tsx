@@ -1,7 +1,7 @@
 import { createProfileAction, getProfileByUserIdAction } from "@/actions/profiles-actions";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
-import { Providers } from "@/components/utilities/providers";
+import { Providers } from "@/components/utilties/providers";
 import { ClerkProvider } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import type { Metadata } from "next";
@@ -32,7 +32,7 @@ export default async function RootLayout({
   const { userId } = await auth();
 
   if (userId) {
-    const profile = getProfileByUserIdAction(userId);
+    const profile = await getProfileByUserIdAction(userId);
     if (!profile.data) {
       await createProfileAction({ userId });
     }
